@@ -3,6 +3,7 @@
     public int X;
     public int Y;
 
+    public Point() {}   //Default constructor
     public Point(int x, int y)
     {
         X = x;
