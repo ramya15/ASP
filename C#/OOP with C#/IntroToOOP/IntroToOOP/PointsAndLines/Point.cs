@@ -1,36 +1,46 @@
-﻿class Point
+﻿using System;
+
+class User
 {
     //Fields - camelCase
-    private int x;
-    private int y;
-    public int z;
+    private string userName;
+    private int password;
 
     //Properties - PascalCase
     //ShortCut: prop + Tab + Tab
-    public int X
+    public string UserName
     {
         get
         {
-            return x;
+            return "Username is " + userName;
         }
         set
         {
-            x = value;
+            if (value.Length >= 4 || value.Length <= 10)
+                userName = value;
+            else
+                Console.WriteLine("Oops! Please enter username within 4 to 10 characters");
         }
     }
 
-    public int Y
+    public int Password
     {
-        get => y;
-        set => value = y;
+        get => password;
+        set
+        {
+            if (value >= 4 && value <= 10)
+                password = value;
+            else
+                Console.WriteLine("Please enter password between 4 and 10");
+
+        }
     }
 
-    public Point() {}   //Default constructor
-    public Point(int x, int y)
+    public User() {}   //Default constructor
+    public User(string uname, int password)
     {
         //this is mostly used when there is conflict of names
-        this.x = x;
-        this.y = y;
-        z = y;
+        this.userName = uname;
+        this.password = password;
     }
 }
