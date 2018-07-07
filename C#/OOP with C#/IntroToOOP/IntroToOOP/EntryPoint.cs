@@ -14,12 +14,12 @@ class EntryPoint
         System.Console.WriteLine(point1.X);
         System.Console.WriteLine(point1.Y);
 
-        Console.WriteLine(point2.X);
-        Console.WriteLine(point2.Y);
+        Console.WriteLine("X: " + point2.X);
+        Console.WriteLine("Y: " + point2.Y);
 
         Human human = new Human(10, 20);
-        System.Console.WriteLine(human.Height);
-        System.Console.WriteLine(human.Weight);
+        System.Console.WriteLine("Height: " + human.Height);
+        System.Console.WriteLine("Weight: {0}", human.Weight);
     }
 }
 
