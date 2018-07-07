@@ -9,7 +9,7 @@ namespace WebRequestorApp
     {
         static void Main(string[] args)
         {
-            WebRequest req = WebRequest.Create("https://www.microsoft.com");
+            WebRequest req = WebRequest.Create(requestUriString: "https://www.google.com");
             WebResponse resp = req.GetResponse();
 
             StreamReader reader = new StreamReader(resp.GetResponseStream(), Encoding.ASCII);
