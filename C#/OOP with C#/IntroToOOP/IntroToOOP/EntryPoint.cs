@@ -4,11 +4,8 @@ class EntryPoint
 {
     static void Main(string[] args)
     {
-        User user = new User
-        {
-            UserName = "Aaron",
-            Password = 5
-        };
+        User user = new User("Aaron");  //GET
+        user.Password = 5;              //SET
 
         Console.WriteLine(user.UserName);
     }

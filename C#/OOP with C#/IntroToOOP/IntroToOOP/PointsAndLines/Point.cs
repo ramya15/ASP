@@ -6,26 +6,21 @@ class User
     private string userName;
     private int password;
 
-    //Properties - PascalCase
+    #region Properties - PascalCase
     //ShortCut: prop + Tab + Tab
     public string UserName
     {
+        //Read Only
         get
         {
-            return "Username is " + userName;
-        }
-        set
-        {
-            if (value.Length >= 4 || value.Length <= 10)
-                userName = value;
-            else
-                Console.WriteLine("Oops! Please enter username within 4 to 10 characters");
+            return "The username is " + userName;
         }
     }
 
     public int Password
     {
-        get => password;
+        //Write Only
+        //get => password;
         set
         {
             if (value >= 4 && value <= 10)
@@ -35,12 +30,16 @@ class User
 
         }
     }
+    #endregion
+
+    #region Constructors
 
     public User() {}   //Default constructor
-    public User(string uname, int password)
+    public User(string userName)
     {
         //this is mostly used when there is conflict of names
-        this.userName = uname;
-        this.password = password;
+        this.userName = userName;
     }
+
+    #endregion
 }
