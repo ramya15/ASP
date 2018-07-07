@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.IO;
+using System.Net;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace WebRequestorApp
 {
@@ -10,6 +9,11 @@ namespace WebRequestorApp
     {
         static void Main(string[] args)
         {
+            WebRequest req = WebRequest.Create("https://www.microsoft.com");
+            WebResponse resp = req.GetResponse();
+
+            StreamReader reader = new StreamReader(resp.GetResponseStream(), Encoding.ASCII);
+            Console.WriteLine(reader.ReadToEnd());
         }
     }
 }
