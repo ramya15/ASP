@@ -4,9 +4,9 @@ class EntryPoint
 {
     static void Main(string[] args)
     {
-        User user = new User("Aaron");  //GET
-        user.Password = 5;              //SET
-        Console.WriteLine(user.UserName);
+        User user1 = new User("Aaron");  //GET
+        user1.Password = 5;              //SET
+        Console.WriteLine(user1.UserName);
         
         User user2 = new User();
         
@@ -15,11 +15,14 @@ class EntryPoint
         //Static fields can be accessed directly from a class without instantiating it. 
         //Value of a static field is not dependent on class instance.
         //It is shared among all instances of class and they can modify/access it internally.
-        user.Id = 100;
-        Console.WriteLine(user.Id);         //o/p: 100
-        Console.WriteLine(user2.Id);        //o/p: 2
-        Console.WriteLine(user3.Id);        //o/p: 3
+
+        //No longer possible as ID can now be assigned during runtime via Constructor/during variable initialization
+        //user1.ID = 100; //Modification of static field is not a good idea. Hence use: const/read-only
+        Console.WriteLine(user1.ID);        //o/p: 1
+        Console.WriteLine(user2.ID);        //o/p: 2
+        Console.WriteLine(user3.ID);        //o/p: 3
         Console.WriteLine(User.currentID);  //o/p: 3
+        Console.WriteLine(User.HEIGHT);     //CONST: 180
     }
 }
 

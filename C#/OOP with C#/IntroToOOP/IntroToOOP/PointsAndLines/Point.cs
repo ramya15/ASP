@@ -5,10 +5,18 @@ class User
     //Static fields
     public static int currentID;
 
+    //2different kind of constants: const and read-only
+    /* const: value hardcoded in the code
+     * const must get its value the moment it is created
+     * const will be static by default */
+    public const int HEIGHT = 100;
+
+    //readonly: value assigned at runtime through code-logic. 
+    public readonly int ID;
+
     //Fields - camelCase
     private string userName;
     private int password;
-    private int id;
 
     #region Properties - PascalCase
     //ShortCut: prop + Tab + Tab
@@ -34,18 +42,6 @@ class User
 
         }
     }
-
-    public int Id
-    {
-        get
-        {
-            return id;
-        }
-        set
-        {
-            id = value;
-        }
-    }
     #endregion
 
     #region Constructors
@@ -54,13 +50,13 @@ class User
     public User()
     {
         currentID++;
-        id = currentID;
+        ID = currentID;
     }
 
     public User(string userName)
     {
         currentID++;
-        id = currentID;
+        ID = currentID;
         //"this" keyword is mostly used when there is conflict of names
         this.userName = userName;
     }
