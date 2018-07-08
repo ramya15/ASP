@@ -1,13 +1,15 @@
-﻿using System;
+﻿using IntroToOOP;
+using System;
 
 class EntryPoint
 {
     static void Main(string[] args)
     {
+        //enum
         User user = new User("Klen", Race.Mersian);
         
         #region Getter/Setter sample code
-        //User user1 = new User("Aaron");  //GET
+        User user1 = new User("Aaron");  //GET
         user1.Password = 5;              //SET
         Console.WriteLine(user1.UserName);
         #endregion
@@ -26,8 +28,11 @@ class EntryPoint
         Console.WriteLine(user2.ID);        //o/p: 2
         Console.WriteLine(user3.ID);        //o/p: 3
         Console.WriteLine(User.currentID);  //o/p: 3
-        Console.WriteLine(User.HEIGHT);     //CONST: 180
+        Console.WriteLine(User.HEIGHT);     //CONST: 100
         #endregion
+
+        //Static Class 
+        Utilities.ColorWriteLine(user.UserName, ConsoleColor.DarkYellow);
     }
 }
 

@@ -11,8 +11,9 @@ class User
     /* const: value hardcoded in the code
      * const must get its value the moment it is created
      * const will be static by default */
-    //public const int HEIGHT = 100;
-    public readonly int HEIGHT;
+    public const int HEIGHT = 100;
+
+    public readonly int height;
 
     //readonly: value assigned at runtime through code-logic. 
     public readonly int ID;
@@ -60,6 +61,13 @@ class User
         ID = currentID;
     }
 
+    public User(string uname)
+    {
+        currentID++;
+        ID = currentID;
+        this.userName = uname;
+    }
+
     public User(string userName, Race race)
     {
         currentID++;
@@ -69,9 +77,9 @@ class User
         this.race = race;
 
         if (this.race == Race.Earthling)
-            HEIGHT = 100;
+            height = 100;
         else if (this.race == Race.Mersian)
-            HEIGHT = 180;
+            height = 180;
 
     }
 
