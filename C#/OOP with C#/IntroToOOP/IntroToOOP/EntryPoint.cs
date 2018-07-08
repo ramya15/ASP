@@ -4,12 +4,16 @@ class EntryPoint
 {
     static void Main(string[] args)
     {
-        User user1 = new User("Aaron");  //GET
+        User user = new User("Klen", Race.Mersian);
+        
+        #region Getter/Setter sample code
+        //User user1 = new User("Aaron");  //GET
         user1.Password = 5;              //SET
         Console.WriteLine(user1.UserName);
-        
+        #endregion
+
+        #region Static fields sample code
         User user2 = new User();
-        
         User user3 = new User();
 
         //Static fields can be accessed directly from a class without instantiating it. 
@@ -23,6 +27,7 @@ class EntryPoint
         Console.WriteLine(user3.ID);        //o/p: 3
         Console.WriteLine(User.currentID);  //o/p: 3
         Console.WriteLine(User.HEIGHT);     //CONST: 180
+        #endregion
     }
 }
 
