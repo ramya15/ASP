@@ -1,4 +1,5 @@
-﻿using WarriorWars.Enum;
+﻿using System;
+using WarriorWars.Enum;
 using WarriorWars.Equipment;
 
 namespace WarriorWars
@@ -17,13 +18,16 @@ namespace WarriorWars
 
         private int health;
         private string name;
+        private bool isAlive;
+
         private Weapon weapon;
         private Armor armor;
         #endregion
 
         #region Properties
         //auto property
-        public bool IsAlive { get; }
+        //public bool IsAlive { get; }
+        public bool IsAlive => isAlive;
         #endregion
 
         #region Constructor
@@ -33,7 +37,7 @@ namespace WarriorWars
             //Initial values when a warrior is created
             this.name = name;
             this.FACTION = faction;
-            IsAlive = true;
+            isAlive = true;
 
             switch (faction)
             {
@@ -51,6 +55,23 @@ namespace WarriorWars
                     break;
             }
         }
+        #endregion
+
+        #region Methods/Actions
+        public void Attack(Warrior enemy)
+        {
+            //current player's weapon damage by enemy armor points.
+            int damage = weapon.Damage / enemy.armor.ArmorPoints;
+            enemy.health -= damage;
+
+            if (enemy.health <= 0)
+            {
+                enemy.isAlive = false;
+                Console.WriteLine($"{enemy.name} is dead and {name} is victorous!");
+            }
+                
+        }
+
         #endregion
     }
 }
