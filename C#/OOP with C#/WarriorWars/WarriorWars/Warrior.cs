@@ -6,10 +6,14 @@ namespace WarriorWars
     class Warrior
     {
         #region Fields
-        private int goodGuyStartingHealth;
-        private int badGuyStartingHealth;
+        //set as constants to not alter the starting health
+        private const int GOOD_GUY_STARTING_HEALTH = 100;
+        private const int BAD_GUY_STARTING_HEALTH = 100;
 
-        private Faction faction;
+        //readonly: 
+        /* constant defined at runtime
+         * can be assigned only in a constructor or variable initializer */
+        private readonly Faction FACTION;
 
         private int health;
         private string name;
@@ -28,7 +32,7 @@ namespace WarriorWars
         {
             //Initial values when a warrior is created
             this.name = name;
-            this.faction = faction;
+            this.FACTION = faction;
             IsAlive = true;
 
             switch (faction)
@@ -36,12 +40,12 @@ namespace WarriorWars
                 case Faction.GoodGuy:
                     weapon = new Weapon(faction);
                     armor = new Armor(faction);
-                    health = goodGuyStartingHealth;
+                    health = GOOD_GUY_STARTING_HEALTH;
                     break;
                 case Faction.BadGuy:
                     weapon = new Weapon(faction);
                     armor = new Armor(faction);
-                    health = badGuyStartingHealth;
+                    health = BAD_GUY_STARTING_HEALTH;
                     break;
                 default:
                     break;

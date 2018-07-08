@@ -4,10 +4,12 @@ namespace WarriorWars.Equipment
 {
     class Weapon
     {
-        private int goodGuyDamage;
-        private int badGuyDamage;
+        #region Fields
+        private const int GOOD_GUY_DAMAGE = 5;
+        private const int BAD_GUY_DAMAGE = 5;
 
         private int damage;
+        #endregion
 
         #region Properties
         //expression body
@@ -20,10 +22,10 @@ namespace WarriorWars.Equipment
             switch (faction)
             {
                 case Faction.GoodGuy:
-                    damage = goodGuyDamage;
+                    damage = GOOD_GUY_DAMAGE;
                     break;
                 case Faction.BadGuy:
-                    damage = badGuyDamage;
+                    damage = BAD_GUY_DAMAGE;
                     break;
                 default:
                     break;
