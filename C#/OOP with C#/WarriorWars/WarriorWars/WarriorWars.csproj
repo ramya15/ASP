@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{95E1E6AA-1509-4489-AA42-13EC159BE5FD}</ProjectGuid>
+    <ProjectGuid>{183BE8B5-E4A7-472B-B6CC-B90DCD872CFC}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>IntroToOOP</RootNamespace>
-    <AssemblyName>IntroToOOP</AssemblyName>
+    <RootNamespace>WarriorWars</RootNamespace>
+    <AssemblyName>WarriorWars</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,15 +42,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Race.cs" />
-    <Compile Include="User.cs" />
+    <Compile Include="Armor.cs" />
     <Compile Include="EntryPoint.cs" />
+    <Compile Include="Faction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utilities.cs" />
+    <Compile Include="Warrior.cs" />
+    <Compile Include="Weapon.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
