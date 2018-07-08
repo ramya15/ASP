@@ -8,6 +8,8 @@ class EntryPoint
         user.Password = 5;              //SET
 
         Console.WriteLine(user.UserName);
+
+        Console.WriteLine(User.ID); //Static fields can be accessed directly from a class without instantiating it. 
     }
 }
 

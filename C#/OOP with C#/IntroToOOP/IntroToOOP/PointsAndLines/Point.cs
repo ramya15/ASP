@@ -2,6 +2,9 @@
 
 class User
 {
+    //Static fields
+    public static int ID;
+
     //Fields - camelCase
     private string userName;
     private int password;
