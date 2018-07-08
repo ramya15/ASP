@@ -8,8 +8,17 @@ class EntryPoint
         user.Password = 5;              //SET
 
         Console.WriteLine(user.UserName);
+        //Static fields can be accessed directly from a class without instantiating it. 
+        Console.WriteLine(user.Id);
 
-        Console.WriteLine(User.ID); //Static fields can be accessed directly from a class without instantiating it. 
+        User user2 = new User();
+        //Value of a static field is not dependent on class instance.
+        //It is shared among all instances of class and they can modify/access it internally.
+        Console.WriteLine(user2.Id);
+
+        User user3 = new User();
+        Console.WriteLine(user3.Id);
+        Console.WriteLine(User.currentID);
     }
 }
 

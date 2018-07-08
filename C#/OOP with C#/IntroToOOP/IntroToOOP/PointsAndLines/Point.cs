@@ -3,11 +3,12 @@
 class User
 {
     //Static fields
-    public static int ID;
+    public static int currentID;
 
     //Fields - camelCase
     private string userName;
     private int password;
+    private int id;
 
     #region Properties - PascalCase
     //ShortCut: prop + Tab + Tab
@@ -33,14 +34,34 @@ class User
 
         }
     }
+
+    public int Id
+    {
+        get
+        {
+            return id;
+        }
+        set
+        {
+            id = value;
+        }
+    }
     #endregion
 
     #region Constructors
 
-    public User() {}   //Default constructor
+    //Default constructor
+    public User()
+    {
+        currentID++;
+        id = currentID;
+    }
+
     public User(string userName)
     {
-        //this is mostly used when there is conflict of names
+        currentID++;
+        id = currentID;
+        //"this" keyword is mostly used when there is conflict of names
         this.userName = userName;
     }
 
