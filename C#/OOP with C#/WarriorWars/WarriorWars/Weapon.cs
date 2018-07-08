@@ -1,0 +1,6 @@
+﻿namespace WarriorWars
+{
+    class Weapon
+    {
+    }
+}
