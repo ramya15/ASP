@@ -8,8 +8,8 @@ namespace WarriorWars
     {
         #region Fields
         //set as constants to not alter the starting health
-        private const int GOOD_GUY_STARTING_HEALTH = 100;
-        private const int BAD_GUY_STARTING_HEALTH = 100;
+        private const int GOOD_GUY_STARTING_HEALTH = 10;
+        private const int BAD_GUY_STARTING_HEALTH = 10;
 
         //readonly: 
         /* constant defined at runtime
@@ -64,12 +64,23 @@ namespace WarriorWars
             int damage = weapon.Damage / enemy.armor.ArmorPoints;
             enemy.health -= damage;
 
+            //Ctrl+R+M: Extract changes to new method, Ctrl+R+R: rename
+            AttackResult(enemy, damage);
+
+        }
+
+        private void AttackResult(Warrior enemy, int damage)
+        {
             if (enemy.health <= 0)
             {
                 enemy.isAlive = false;
-                Console.WriteLine($"{enemy.name} is dead and {name} is victorous!");
+                Tools.ColorfulWriteLine($"{enemy.name} is dead", ConsoleColor.DarkRed);
+                Tools.ColorfulWriteLine($"{name} is victorous!", ConsoleColor.DarkGreen);
             }
-                
+            else
+            {
+                Console.WriteLine($"{name} attacked {enemy.name}. {enemy.name} damage inflected by {damage}. Remaining health of {enemy.name} is {enemy.health}");
+            }
         }
 
         #endregion
