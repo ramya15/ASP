@@ -1,4 +1,5 @@
-﻿using System.ServiceModel;
+﻿using System;
+using System.ServiceModel;
 using System.ServiceModel.Web;
 
 namespace WebServiceApplication.Service
@@ -8,7 +9,10 @@ namespace WebServiceApplication.Service
     public interface IRESTService
     {
         [OperationContract]
+        //GET: getting data from service
+        //Bare: display Json as plain string without any wrapped package
+        //UriTemplate: link how to call the method (TURI can be provided with any name but here is mentioned same as the method name)
         [WebInvoke(Method ="GET", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare, UriTemplate="DoWork")]
-        void DoWork();
+        String DoWork();
     }
 }

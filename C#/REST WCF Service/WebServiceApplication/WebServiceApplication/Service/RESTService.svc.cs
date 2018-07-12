@@ -1,4 +1,5 @@
-﻿using System.ServiceModel.Activation;
+﻿using System;
+using System.ServiceModel.Activation;
 
 namespace WebServiceApplication.Service
 {
@@ -7,8 +8,9 @@ namespace WebServiceApplication.Service
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
     public class RESTService : IRESTService
     {
-        public void DoWork()
+        public String DoWork()
         {
+            return "REST WCF Service!";
         }
     }
 }
