@@ -8,9 +8,14 @@ namespace WebServiceApplication.Service
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
     public class RESTService : IRESTService
     {
-        public String DoWork()
+        public String DoGetRequest()
         {
             return "REST WCF Service!";
+        }
+
+        public int DoPostRequest(int value)
+        {
+            return value * value;
         }
     }
 }
