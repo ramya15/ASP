@@ -17,5 +17,8 @@ namespace WebServiceApplication.Service
 
         [WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare, UriTemplate = "DoPostRequest")]
         int DoPostRequest(int value);
+
+        [WebInvoke(Method ="POST", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare, UriTemplate = "DoAddValues")]
+        int DoAddValues(AddValues value);
     }
 }
