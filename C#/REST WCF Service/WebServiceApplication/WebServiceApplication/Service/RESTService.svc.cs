@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.Serialization;
 using System.ServiceModel.Activation;
 
 namespace WebServiceApplication.Service
@@ -16,6 +17,26 @@ namespace WebServiceApplication.Service
         public int DoPostRequest(int value)
         {
             return value * value;
+        }
+
+        public int DoAddValues(AddValues val)
+        {
+            return val.value1 + val.value2;
+        }
+    }
+
+    [DataContract]
+    public class AddValues
+    {
+        [DataMember]
+        public int value1 { get; set; }
+        [DataMember]
+        public int value2 { get; set; }
+
+        public AddValues()
+        {
+            value1 = 0;
+            value2 = 0;
         }
     }
 }
